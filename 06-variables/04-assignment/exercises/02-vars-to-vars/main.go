@@ -33,17 +33,10 @@ package main
 // EXPECTED OUTPUT
 //  dark green
 // ---------------------------------------------------------
+import "fmt"
 
 func main() {
-	// UNCOMMENT THE CODE BELOW:
-
-	// color := "green"
-
-	// ADD YOUR CODE BELOW
-
-	// ?
-
-	// UNCOMMENT THE CODE BELOW TO PRINT THE VARIABLE
-
-	// fmt.Println(color)
+	color := "green"
+	color = "dark " + color
+	fmt.Println(color)
 }

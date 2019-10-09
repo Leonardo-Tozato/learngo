@@ -4,8 +4,13 @@
 // Learn Go Programming Course
 // License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 //
-
 package main
+
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
 
 // ---------------------------------------------------------
 // STORY
@@ -52,4 +57,17 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if args := os.Args; len(args) != 2 {
+		fmt.Println("invalid usage. go run main.go [age]")
+	} else if n, err := strconv.ParseInt(args[1], 10, 64); err != nil {
+		fmt.Println("Error", err)
+	} else if n < 0 {
+		fmt.Println("[age] can't be negative")
+	} else if n > 17 {
+		fmt.Println("R-Rated")
+	} else if n < 13 {
+		fmt.Println("PG-Rated")
+	} else {
+		fmt.Println("PG-13")
+	}
 }
